@@ -1,0 +1,93 @@
+.notSelectable
+{
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+}
+
+.smallImage
+{
+    width: 20px;
+}
+
+.leftImage
+{
+    margin-left: 9px;
+}
+
+/* Tooltip container */
+.mytooltip {
+    visibility: visible;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Tooltip text */
+.mytooltip .mytooltiptext {
+    visibility: hidden;
+    width: 300px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 6px;
+    top: 120px;
+    left: 40%; 
+    margin-left: -65px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: fixed;
+    z-index: 1;
+}
+
+/* Tooltip text */
+.mytooltip .mytooltiptext-large {
+    width: 300px;
+    padding: 6px 0;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.mytooltip:hover .mytooltiptext {
+    visibility: visible;
+}
+
+
+
+
+
+/* Tooltip container */
+.mybottomtooltip {
+    visibility: visible;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Tooltip text */
+.mybottomtooltip .mybottomtooltiptext {
+    visibility: hidden;
+    width: 130px;
+    background-color: black;
+    color: #fff;
+    text-align: left;
+    padding: 0px 16px;
+    border-radius: 6px;
+    top: 125%;
+    left: 50%; 
+    margin-left: -65px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Tooltip text */
+.mybottomtooltip .mybottomtooltiptext-large {
+    width: 400px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.mybottomtooltip:hover .mybottomtooltiptext {
+    visibility: visible;
+}

@@ -1,0 +1,112 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Look at all those Torrents</title>
+  <meta name="description" content="Oh Noes!">
+  <meta name="author" content="Kurt Lourens">
+
+		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+		
+		<!-- Angular Section -->
+		<script rel="text/javascript" src="lib/angular.min.js" ></script>
+		<script rel="text/javascript" src="lib/angular-route.min.js"></script>
+		
+		<script src="app.js"></script>
+		
+		<script src="shared/resourceManager.js"></script>
+		<script src="shared/service/baseService.js"></script>
+		<script src="shared/service/Media/mediaService.js"></script>
+		
+		<script rel="text/javascript" src="components/Home/home.js"></script>
+		<script rel="text/javascript" src="components/Home/controllers/homeController.js"></script>
+		
+  <link rel="stylesheet" href="css/mini-main.css" />
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+  <link rel="stylesheet" href="css/ToolTip.css" />
+  <link rel="stylesheet" href="css/Loading.css" />
+  <link rel="stylesheet" href="css/mini-torrent.css" />
+  
+</head>
+
+<body ng-app="torrent" ng-controller="HomeController as home">
+
+	<header id="header" class="alt navBarBackgroud row" style="background-color: #242943; z-index:1">
+		<a href="http://khaoznet.xyz" class="logo nolink backgroundOpacity" style="text-decoration: none;"><strong>KhaozNet</strong><span style="color: #DA0000;"> - Torrent Portal</span></a>
+		<nav>
+			<a href="http://khaoznet.xyz" style="color: #FFF000; text-decoration: none;">Home</a>
+		</nav>
+	</header>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 60px;">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 menuItem">
+					<a href="" class="noLink"><h3 class="noBottomMargin" ng-click="home.MovieClick()">Movies</h3></a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 menuItem">
+					<a href="" class="noLink"><h3 class="noBottomMargin" ng-click="home.ShowClick()">Shows</h3></a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 menuItem">
+					<a href="" class="noLink"><h3 class="noBottomMargin" ng-click="home.AnimeDClick()">Anime Dub</h3></a>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 menuItem">
+					<a href="" class="noLink"><h3 class="noBottomMargin" ng-click="home.AnimeSClick()">Anime Sub</h3></a>
+				</div>
+				<div id="content" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 row" ng-show="home.selectedItem" style="background-color: #2C3F5A; margin: 0; padding: 0;">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display:inline; margin-top:10px;">
+						<span style="margin-right: 20px;"><strong>Enter Search Term: </strong></span><input ng-model="home.searchText" ng-change="home.filterShow()" style="color: black; width: 70%;"/>
+					</div>
+					<hr style="width: 100%"/>
+					
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-show="home.NoResult" style="background-color: #2C3F5A; margin: 0; padding: 0; z-index:2;">
+						<h1 style="margin-top: 30px; text-align: center; padding-left: 15px;">No Results</h1>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lds-css ng-scope" ng-show="home.loading" style="background-color: #2C3F5A; margin: 0; padding: 0; z-index:3;">
+					  <div style="margin: auto;" class="lds-dual-ring">
+						<div></div>
+					  </div>
+					</div>
+				
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-show="home.showMovies" ng-repeat="Movie in home.Movies | filter : home.searchText">
+						<h4 style="margin-bottom: 0px;">{{Movie}}</h4>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-show="home.showSeries" ng-repeat="Show in home.ShowsSearch | filter : home.searchText">
+						<div class="notSelectable mytooltip">
+							<h4 style="margin-bottom: 0px;">{{Show.rootFolder}}</h4>
+							<span class="mytooltiptext" style="color:#ab7ad8">
+								<p style="color:greenyellow;" class="noMarginPadding" ng-repeat="Seasons in Show.subFolders"> {{Seasons}} </p>
+							</span>
+						</div>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-show="home.showAnimeD" ng-repeat="AnimeD in home.AnimeDSearch | filter : home.searchText">
+						<div class="notSelectable mytooltip">
+							<h4 style="margin-bottom: 0px;">{{AnimeD.rootFolder}}</h4>
+							<span class="mytooltiptext" style="color:#ab7ad8">
+								<p style="color:greenyellow;" class="noMarginPadding" ng-repeat="Seasons in AnimeD.subFolders"> {{Seasons}} </p>
+							</span>
+						</div>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-show="home.showAnimeS" ng-repeat="AnimeS in home.AnimeSSearch | filter : home.searchText">
+						<div class="notSelectable mytooltip">
+							<h4 style="margin-bottom: 0px;">{{AnimeS.rootFolder}}</h4>
+							<span class="mytooltiptext" style="color:#ab7ad8">
+								<p style="color:greenyellow;" class="noMarginPadding" ng-repeat="Seasons in AnimeS.subFolders"> {{Seasons}} </p>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-hide="home.selectedItem" style="background-color: #2C3F5A; margin: 0; padding: 0;">
+					<h1 style="margin-top: 30px; text-align: center; padding-left: 15px;">Select option from above</h1>
+				</div>
+				
+			</div>
+			
+			
+		</div>
+	</div>
+</body>
+</html>

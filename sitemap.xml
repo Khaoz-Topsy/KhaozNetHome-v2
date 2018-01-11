@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
+  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+<url>
+  <loc>http://khaoznet.xyz/</loc>
+    <image:image>
+       <image:loc>http://khaoznet.xyz/images/home-bg.jpg</image:loc>
+       <image:caption>Background image on webroot</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>http://khaoznet.xyz/images/Background/DownloadsSquare.png</image:loc>
+       <image:caption>Download image on webroot, links to downloads page</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>http://khaoznet.xyz/images/Background/Downloads.jpg</image:loc>
+       <image:caption>Downloads page background image</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>http://khaoznet.xyz/images/Logos/CPUUsage.png</image:loc>
+       <image:caption>CPU Usage icaon</image:caption>
+    </image:image>
+  <lastmod>2017-06-06T22:18:51+00:00</lastmod>
+</url>
+<url>
+  <loc>http://khaoznet.xyz/Downloads.html</loc>
+  <lastmod>2017-06-06T22:28:43+00:00</lastmod>
+</url>
+</urlset>

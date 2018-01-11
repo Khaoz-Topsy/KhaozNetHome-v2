@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/khaoztopsy
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://Khaoznet.xyz
+  * I am khaoztopsy (https://keybase.io/khaoztopsy) on keybase.
+  * I have a public key ASCCWEgiHe3kD_X4QwmY4PqRBuH9ZXv68aMPl0PBHAeOAQo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120825848221dede40ff5f8430998e0fa9106e1fd657bfaf1a30f9743c11c078e010a",
+            "host": "keybase.io",
+            "kid": "0120825848221dede40ff5f8430998e0fa9106e1fd657bfaf1a30f9743c11c078e010a",
+            "uid": "75147d5413acfff585795281c2b3b419",
+            "username": "khaoztopsy"
+        },
+        "service": {
+            "hostname": "Khaoznet.xyz",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.23"
+    },
+    "ctime": 1495692912,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1495692885,
+        "hash": "47ef69290b093dd0ae2db98480a21c07e05a729a5e44422bfd82a6d155df5d375888791381ae5f76b12a72babd23f33250ce069ebc09345252ef9529aa35e40e",
+        "seqno": 1109448
+    },
+    "prev": "7c939ca1cb5727fd6847e9956e888529e23204879fe21e0d0cfd075215338b27",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgglhIIh3t5A/1+EMJmOD6kQbh/WV7+vGjD5dDwRwHjgEKp3BheWxvYWTFAvZ7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwODI1ODQ4MjIxZGVkZTQwZmY1Zjg0MzA5OThlMGZhOTEwNmUxZmQ2NTdiZmFmMWEzMGY5NzQzYzExYzA3OGUwMTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwODI1ODQ4MjIxZGVkZTQwZmY1Zjg0MzA5OThlMGZhOTEwNmUxZmQ2NTdiZmFmMWEzMGY5NzQzYzExYzA3OGUwMTBhIiwidWlkIjoiNzUxNDdkNTQxM2FjZmZmNTg1Nzk1MjgxYzJiM2I0MTkiLCJ1c2VybmFtZSI6ImtoYW96dG9wc3kifSwic2VydmljZSI6eyJob3N0bmFtZSI6IktoYW96bmV0Lnh5eiIsInByb3RvY29sIjoiaHR0cDoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMjMifSwiY3RpbWUiOjE0OTU2OTI5MTIsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ5NTY5Mjg4NSwiaGFzaCI6IjQ3ZWY2OTI5MGIwOTNkZDBhZTJkYjk4NDgwYTIxYzA3ZTA1YTcyOWE1ZTQ0NDIyYmZkODJhNmQxNTVkZjVkMzc1ODg4NzkxMzgxYWU1Zjc2YjEyYTcyYmFiZDIzZjMzMjUwY2UwNjllYmMwOTM0NTI1MmVmOTUyOWFhMzVlNDBlIiwic2Vxbm8iOjExMDk0NDh9LCJwcmV2IjoiN2M5MzljYTFjYjU3MjdmZDY4NDdlOTk1NmU4ODg1MjllMjMyMDQ4NzlmZTIxZTBkMGNmZDA3NTIxNTMzOGIyNyIsInNlcW5vIjozLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQNz6DosaAYMsB45AywdlANahurjGoDnWf+vXdngYFFyiQ8WXeIkBJHNzzTK/nTS8gOx8w0VOkdl7L3ZFtrB+/w6oc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCBYv+gFzd3rCXvkc/yQkULG1ZVR/nihjmSPPvtji5fOCqN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/khaoztopsy
+
+==================================================================

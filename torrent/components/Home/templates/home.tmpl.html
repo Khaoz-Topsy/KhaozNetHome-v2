@@ -1,0 +1,68 @@
+<div class="main-content-inner">
+<style>
+    .heading 
+    {
+        font-weight: 400;
+        font-size: 18px;
+    }
+</style>
+
+    <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+        <ul class="breadcrumb">
+            <li>
+                <i class="ace-icon fa fa-home home-icon"></i>
+                <a href="#">Home</a>
+            </li>
+            <li class="active">{{$ctrl.pageName}}</li>
+        </ul><!-- /.breadcrumb -->
+
+        <div class="nav-search" id="nav-search">
+            <form class="form-search">
+                <span class="input-icon">
+                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                    <i class="ace-icon fa fa-search nav-search-icon"></i>
+                </span>
+            </form>
+        </div><!-- /.nav-search -->
+    </div>
+
+    <div class="page-content">
+        <div class="page-header">
+            <h1>
+                {{$ctrl.pageName}}
+                <!--<small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                    overview &amp; stats
+                </small>-->
+            </h1>
+        </div><!-- /.page-header -->
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- PAGE CONTENT BEGINS -->  
+                    <button type="button" class="btn btn-info col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-click="$ctrl.caretClick()" data-toggle="collapse" data-target="#Servers">
+                        <i class="fa fa-caret-{{$ctrl.caret}} fa-1x"></i>
+                        Running Servers
+                        <i class="fa fa-caret-{{$ctrl.caret}} fa-1x"></i>
+                    </button>
+                    
+                    <div id="Servers" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 collapse in">
+                        <br />
+                        <div ng-repeat="DashboardProcess in $ctrl.Data" class="col-lg-2 col-md-2 col-sm-3 col-xs-6" style="margin-bottom:40px;">
+                            <a href="{{DashboardProcess.href}}">
+                                <img src="Angular-src/media/Images/Services/{{$ctrl.getActiveStatus(DashboardProcess);}}.png" style="margin-left: 10%; width: 80%"/>
+                            </a>
+                            <h4 align="center" class="heading">{{DashboardProcess.processName}}
+                                <br>
+                                <i class="fa fa-{{$ctrl.getTickCrossClass(DashboardProcess.active)}} fa-2x" aria-hidden="true" 
+                                    style="color:{{$ctrl.getColourClass(DashboardProcess.active)}};">
+                                </i>
+                            </h4>
+                        </div>
+                    </div>
+
+                <!-- PAGE CONTENT ENDS -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.page-content -->
+</div>

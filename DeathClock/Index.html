@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>Kurt's Death Countdown :|</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="./progressBar.css">
+	<link rel="stylesheet" href="./custom.css">
+	<link rel="icon" type="image/png" href="../favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body style="text-align: center;">
+<label>Set your own date: </label>
+<input id="datepicker" type="date" value="2056-06-05" onchange="dateChanged(event)">
+<script>
+function dateChanged(newDate) {
+	console.log(newDate.target.value);
+	countDownDate = new Date(newDate.target.value + " 12:00:00").getTime();
+}
+
+// Set the date we're counting down to
+var countDownDate = new Date("Jun 5, 2056 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	
+	var totalYears = (distance / (1000 * 60 * 60 * 24 * 365)).toFixed(1);
+	var totalMonths = Math.floor(distance / (1000 * 60 * 60 * 24 * 28));
+    var totalDays = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var totalHours = Math.floor(distance / (1000 * 60 * 60));
+    var totalMinutes = Math.floor(distance / (1000 * 60));
+    var totalSeconds = Math.floor(distance / 1000);
+	var totalSeasons = Math.floor(totalYears * 4);
+	var leapYears = Math.floor(totalYears / 4);
+    
+    // Output the result in an element with id="countdown"
+    document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+	
+	
+    document.getElementById("countdown-leapYears").innerHTML = "<small>Leap Years: </small>" +leapYears;
+    document.getElementById("countdown-totalYears").innerHTML = "<small>Years: </small>" + totalYears;
+    document.getElementById("countdown-totalSeasons").innerHTML = "<small>Seasons: </small>" + totalSeasons;
+    document.getElementById("countdown-totalMonths").innerHTML = "<small>Months: </small>" + totalMonths;
+    document.getElementById("countdown-totalDays").innerHTML = "<small>Days: </small>" + totalDays;
+    document.getElementById("countdown-totalHours").innerHTML = "<small>Hours: </small>" + totalHours;
+    document.getElementById("countdown-totalMinutes").innerHTML = "<small>Minutes: </small>" + totalMinutes;
+    document.getElementById("countdown-totalSeconds").innerHTML = "<small>Seconds: </small>" + totalSeconds;
+	
+	var usedYears = 61.6 - (distance / (1000 * 60 * 60 * 24 * 365)).toFixed(1)
+	document.getElementById("usedTime").innerHTML = "<span class='large-emoji'>🍼</span>" + usedYears.toFixed(1) + " Years " + " = " + totalSeconds + " Seconds (Used Time)";
+	
+	var elem = document.getElementById("myBar");
+	var usedSeconds = 1943908243 - totalSeconds;
+	var width = usedSeconds / 1943908243 * 100;
+	elem.style.width = width + '%'
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+
+<h1 id="countdown">0</h1>
+<h3 id="countdown-leapYears">0</h3>
+<h3 id="countdown-totalYears">0</h3>
+<h3 id="countdown-totalSeasons">0</h3>
+<h3 id="countdown-totalMonths">0</h3>
+<h3 id="countdown-totalDays">0</h3>
+<h3 id="countdown-totalHours">0</h3>
+<h3 id="countdown-totalMinutes">0</h3>
+<h3 id="countdown-totalSeconds" style="margin-bottom: 0px;">0</h3>
+
+<div id="progressBarHeading">
+	<p id="usedTime" style="float: left;"><span class="large-emoji">🍼</span>0 Years = 0 Seconds</p>
+	<p style="float: right;">61.6 Years = 1,943,908,243.2 Seconds (Total Time) <span class="large-emoji">💀</span></p>
+</div>
+
+<div id="myProgress" style="clear: both;">
+  <div id="myBar"></div>
+</div>
+
+<p>On a 1920×1080 screen, it can take up to 11.71 days for the progress bar to move 1 pixel. <br />
+On a 3840×2160 screen, it can take up to 5.85 days for the progress bar to move 1 pixel.</p>
+
+<br />
+<p>Loosely based on South Africa's Life expectancy (61,6   years) <a href="http://www.statssa.gov.za/publications/P0302/P03022017.pdf">www.statssa.gov.za</a></p>
+<a href="https://businesstech.co.za/news/general/118214/south-africa-has-the-lowest-life-expectancy-in-the-world/">BusinessTech Article</a>
+
+</body>
+</html>

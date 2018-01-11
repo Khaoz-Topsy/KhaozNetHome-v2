@@ -1,0 +1,41 @@
+.navBarBackgroud {
+	background-image: url('../images/nav.png'); 
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.backgroundOpacity {
+	background-color: rgba(255, 255, 255, 0.6);
+}
+.menuItem {
+	padding: 15px 10px;
+	text-align: center;
+}
+.noBottomMargin {
+	margin-bottom: 0px;
+}
+
+.noLink:link {
+	color: lightblue;
+	text-decoration: none;
+}
+.noLink:visited {
+	color: lightblue;
+	text-decoration: none;
+}
+.noLink:hover {
+	color: lightblue;
+	text-decoration: none;
+}
+.noLink:active {
+	color: lightblue;
+	text-decoration: none;
+}
+
+.noMarginPadding {
+	margin: 0; 
+	padding: 0;
+}
+
+h3 {
+	margin-top: 1em;
+}
