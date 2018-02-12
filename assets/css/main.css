@@ -1820,6 +1820,8 @@ button,
       background-image: url(images/Logos/Custom.png); }
     .tiles article.grey-tile > .image:before {
       background-color: #6e6e6e; }
+    .tiles article.light-grey-tile > .image:before {
+      background-color: #e0e0e0; }
     body:not(.is-touch) .tiles article:hover > .image {
       -moz-transform: scale(1.1);
       -webkit-transform: scale(1.1);
