@@ -1,0 +1,21 @@
+{
+  "name": "khaoznet-home",
+  "version": "1.0.0",
+  "description": "This is the source files for my home page at khaoznet.xyz",
+  "main": "gulpFile.js",
+  "dependencies": {
+    "del": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://khaoznet.visualstudio.com/_git/KhaozNet"
+  },
+  "author": "Kurt Lourens",
+  "license": "ISC"
+}
