@@ -162,6 +162,18 @@
 				}
 			}
 
+			&.style7 {
+				> .image:before {
+					background-color: _palette(accent7);
+				}
+			}
+
+			&.style8 {
+				> .image:before {
+					background-color: _palette(accent8);
+				}
+			}
+
 			&.online-cv {
 				> .image:before {
 					background-image: url(images/Logos/Custom.png);
