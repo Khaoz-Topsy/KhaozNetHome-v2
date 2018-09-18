@@ -24,18 +24,19 @@ var delPaths = {
   css_non_min: "!./assets/css/*.min.css",
 };
 
-
-gulp.task('clean:styles', del.bind(null, [delPaths.css]));
-gulp.task('clean:non-min-styles', ['sass', 'purgecss'], del.bind(null, [delPaths.css, delPaths.css_non_min]));
-
-gulp.task('sass', ['clean:styles'], function() {
+function cleanCss() {
+  return del([delPaths.css]);
+}
+function cleanNonMinStylesTask() {
+  return del([delPaths.css, delPaths.css_non_min]);
+}
+function sassTask() {
   return gulp.src([inputPaths.scss])
     .pipe(sass())
     .pipe(gulp.dest(outputPaths.css))
-    .pipe(size({ title: "Info     'sass'" }));
-});
-
-gulp.task('purgecss', ['clean:styles', 'sass'], function() {
+    .pipe(size({ title: "Info     'sassTask'" }));
+}
+function purgeCssTask() {
   return gulp.src([inputPaths.css])
     // .pipe(concat('main.css'))
     // .pipe(purgecss({
@@ -52,15 +53,18 @@ gulp.task('purgecss', ['clean:styles', 'sass'], function() {
       path.basename += ".min";
     }))
     .pipe(gulp.dest(outputPaths.css))
-    .pipe(size({ title: "Info     'purgecss'" }));
-})
+    .pipe(size({ title: "Info     'purgeCssTask'" }));
+}
+function watchTask() {
+  gulp.watch([[inputPaths.scss]], sassTask);
+}
+
+//Delete the existing css, use SASS to generate new css, purge the css, remove non-min css
+var createCssAndRemoveMinified = gulp.series(cleanCss, sassTask, purgeCssTask, cleanNonMinStylesTask);
+createCssAndRemoveMinified.description = 'Delete old CSS and Generate new CSS'
 
 
-gulp.task('build-watch', function() {
-   gulp.watch([[inputPaths.scss]], ['sass']);
-});
-
-
-
-gulp.task('build', ['clean:styles', 'sass', 'purgecss', 'clean:non-min-styles'], function() {});
-gulp.task('default', ['build'], function() {});
+gulp.task('cleanCss', cleanCss);
+gulp.task('createCssAndRemoveMinified', createCssAndRemoveMinified);
+gulp.task('build-watch', watchTask);
+gulp.task('default', createCssAndRemoveMinified);
